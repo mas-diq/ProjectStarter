@@ -4,5 +4,17 @@
     <string name="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry</string>
     <string name="price">Rp.24.9999.999,-</string>
     <string name="brand">Camera Catalogue</string>
-
+    <string name="email">Email :</string>
+    <string name="tv_email">Enter your email</string>
+    <string name="password">Password :</string>
+    <string name="tv_password">Enter your password</string>
+    <string name="store_camera">Store Camera</string>
+    <string name="hint_pass">Please enter your correct password</string>
+    <string name="hint_email">Please enter your correct email</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="name">Name :</string>
+    <string name="tv_name">Enter your name</string>
+    <string name="address">Address :</string>
+    <string name="tv_address">Enter your address</string>
 </resources>
