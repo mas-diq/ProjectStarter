@@ -143,7 +143,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnLogin"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="48dp"
@@ -158,6 +158,7 @@
         app:layout_constraintTop_toBottomOf="@+id/layoutPass" />
 
     <Button
+        android:id="@+id/btnRegister"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="48dp"
@@ -168,6 +169,6 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
