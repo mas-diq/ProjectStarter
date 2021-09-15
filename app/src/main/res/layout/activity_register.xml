@@ -37,7 +37,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
@@ -57,7 +57,7 @@
             android:layout_weight="1">
 
             <EditText
-                android:id="@+id/etEmail"
+                android:id="@+id/etName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:autofillHints="Enter login"
@@ -93,7 +93,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/email"
+                android:id="@+id/tv_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
@@ -148,7 +148,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/password"
+                android:id="@+id/tv_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
@@ -204,7 +204,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/password"
+                android:id="@+id/tv_Address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
@@ -244,6 +244,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnRegister"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="48dp"
