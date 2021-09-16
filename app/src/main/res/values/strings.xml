@@ -16,4 +16,6 @@
     <string name="tv_name">Enter your name</string>
     <string name="address">Address :</string>
     <string name="tv_address">Enter your address</string>
+    <string name="recommended">Recommended</string>
+    <string name="show_all">Show All</string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primaryDarkColor"
+    android:background="@color/primaryColor"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,18 +12,57 @@
         android:layout_height="match_parent"
         android:padding="12dp">
 
+        <ImageView
+            android:id="@+id/logoBrand"
+            android:layout_width="220dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/camera"
+            tools:ignore="ContentDescription" />
+
         <TextView
             android:id="@+id/productName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18sp"
+            android:background="@drawable/background2"
             android:fontFamily="@font/montserrat_bold"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
             android:text="@string/brand"
-            android:textColor="@color/primaryTextColor"
-            android:textSize="32sp"
+            android:textColor="@color/accentColor"
+            android:textSize="28sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/logoBrand" />
+
+        <TextView
+            android:id="@+id/recomended"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/recommended"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productName" />
+
+        <TextView
+            android:id="@+id/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/show_all"
+            android:textColor="@color/accentColor"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productName" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,7 +70,7 @@
             android:layout_marginTop="12dp"
             android:orientation="horizontal"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/productName">
+            app:layout_constraintTop_toBottomOf="@id/more">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv"
