@@ -22,7 +22,7 @@
             <ImageView
                 android:id="@+id/imageCamera"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="180dp"
                 android:cropToPadding="false"
                 android:scaleType="centerCrop"
                 android:visibility="visible"
@@ -34,17 +34,18 @@
                 tools:ignore="ContentDescription" />
 
             <TextView
-                android:id="@+id/price"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_price"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background1"
                 android:fontFamily="@font/montserrat_medium"
-                android:paddingHorizontal="8dp"
+                android:gravity="center"
                 android:paddingVertical="4dp"
                 android:text="@string/price"
-                android:textColor="@color/primaryDarkColor"
+                android:textColor="@color/primaryTextColor"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -62,7 +63,7 @@
                 android:gravity="center"
                 android:text="@string/title"
                 android:textColor="@color/primaryTextColor"
-                android:textSize="22sp"
+                android:textSize="26sp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_subtitle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -74,10 +75,11 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_regular"
                 android:gravity="center_horizontal|center_vertical"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="4dp"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="12dp"
                 android:text="@string/subtitle"
                 android:textColor="@color/primaryTextColor"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_title" />

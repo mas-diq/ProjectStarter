@@ -22,6 +22,7 @@ class AdapterOne(private val cameraList: ArrayList<DataCamera>) :
         holder.image.setImageResource(item.image)
         holder.title.text = item.title
         holder.subtitle.text = item.subtitle
+        holder.price.text = item.price
     }
 
     override fun getItemCount(): Int {
@@ -32,5 +33,6 @@ class AdapterOne(private val cameraList: ArrayList<DataCamera>) :
         val title = itemView.tv_title!!
         val subtitle = itemView.tv_subtitle!!
         val image = itemView.imageCamera!!
+        val price = itemView.tv_price!!
     }
 }

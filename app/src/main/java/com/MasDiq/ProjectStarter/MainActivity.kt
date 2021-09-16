@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             "Sony α6400",
             "Sony α6600",
             "Sony α7C",
-            "Sony α7R III ",
+            "Sony α7R III",
             "Sony FX3"
         )
 
