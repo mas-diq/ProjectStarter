@@ -10,7 +10,6 @@
     <string name="tv_password">Enter your password</string>
     <string name="store_camera">Store Camera</string>
     <string name="hint_pass">Please enter your correct password</string>
-    <string name="hint_email">Please enter your correct email</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="name">Name :</string>

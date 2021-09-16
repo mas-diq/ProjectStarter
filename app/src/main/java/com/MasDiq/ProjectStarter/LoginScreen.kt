@@ -14,6 +14,11 @@ class LoginScreen : AppCompatActivity() {
             val move = Intent(this, Register::class.java)
             startActivity(move)
         }
+
+        btnLogin.setOnClickListener {
+            val move = Intent(this, MainActivity::class.java)
+            startActivity(move)
+        }
     }
 }
 
