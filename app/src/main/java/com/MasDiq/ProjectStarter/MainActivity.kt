@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var imageId: ArrayList<Int>
     private lateinit var title: ArrayList<String>
     private lateinit var subtitle: ArrayList<String>
+    private lateinit var price: ArrayList<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             "Sony α6400",
             "Sony α6600",
             "Sony α7C",
-            "Sony α7R III ",
+            "Sony α7R III",
             "Sony FX3"
         )
 
@@ -52,9 +53,19 @@ class MainActivity : AppCompatActivity() {
             "Full-frame Cinema Line",
         )
 
+        price = arrayListOf(
+            "Coming Soon",
+            "Rp.9,999,000",
+            "Rp.12,999,000",
+            "Rp.20,999,000",
+            "Rp.26,999,000",
+            "Rp.36,999,000",
+            "Coming Soon",
+        )
+
         // Masukin data
         for (x in imageId.indices) {
-            val camera = DataCamera(title[x], subtitle[x], imageId[x])
+            val camera = DataCamera(title[x], subtitle[x], imageId[x], price[x])
             arrayList.add(camera)
         }
         rv.adapter = AdapterOne(arrayList)
