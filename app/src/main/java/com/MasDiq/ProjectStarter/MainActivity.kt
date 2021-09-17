@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.MasDiq.Adapter.AdapterOne
+import com.MasDiq.Adapter.AdapterTwo
 import com.MasDiq.Data.DataCamera
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,8 +20,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val window = this.window
+        window.statusBarColor = this.resources.getColor(R.color.primaryColor)
+
+        // Recycler View One
         rv.layoutManager = LinearLayoutManager(this)
         rv.setHasFixedSize(true)
+        arrayList = arrayListOf()
+
+        // Recycler View Two
+        rvTwo.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        rvTwo.setHasFixedSize(true)
         arrayList = arrayListOf()
 
         imageId = arrayListOf(
@@ -63,11 +73,23 @@ class MainActivity : AppCompatActivity() {
             "Coming Soon",
         )
 
-        // Masukin data
+        getRecyclerViewOne()
+        getRecyclerViewTwo()
+    }
+
+    private fun getRecyclerViewOne() {
         for (x in imageId.indices) {
             val camera = DataCamera(title[x], subtitle[x], imageId[x], price[x])
             arrayList.add(camera)
         }
         rv.adapter = AdapterOne(arrayList)
+    }
+
+    private fun getRecyclerViewTwo() {
+        for (x in imageId.indices) {
+            val camera = DataCamera(title[x], subtitle[x], imageId[x], price[x])
+            arrayList.add(camera)
+        }
+        rvTwo.adapter = AdapterTwo(arrayList)
     }
 }

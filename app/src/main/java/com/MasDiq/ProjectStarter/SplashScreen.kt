@@ -10,6 +10,9 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
+        val window = this.window
+        window.statusBarColor = this.resources.getColor(R.color.primaryColor)
+
         // Delay splash for 3 sec
         Handler(mainLooper).postDelayed({
             val move = Intent(this, LoginScreen::class.java)

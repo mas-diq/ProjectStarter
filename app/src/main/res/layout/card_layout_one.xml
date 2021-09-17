@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="12dp"
-    android:layout_marginVertical="12dp"
+    android:layout_marginVertical="8dp"
     android:background="@drawable/background">
 
     <LinearLayout
@@ -22,38 +22,20 @@
             <ImageView
                 android:id="@+id/imageCamera"
                 android:layout_width="match_parent"
-                android:layout_height="148dp"
-                android:cropToPadding="false"
-                android:scaleType="fitCenter"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/alpha_6100"
+                app:srcCompat="@drawable/fx3"
                 tools:ignore="ContentDescription" />
 
-            <TextView
-                android:id="@+id/tv_price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/background1"
-                android:fontFamily="@font/montserrat_medium"
-                android:gravity="center"
-                android:paddingVertical="6dp"
-                android:text="@string/price"
-                android:textColor="@color/primaryTextColor"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
             android:layout_weight="2">
 
@@ -61,11 +43,12 @@
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/montserrat_bold"
                 android:gravity="center"
                 android:text="@string/title"
                 android:textColor="@color/primaryTextColor"
-                android:textSize="26sp"
+                android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_subtitle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -78,13 +61,31 @@
                 android:fontFamily="@font/montserrat_regular"
                 android:gravity="center_horizontal|center_vertical"
                 android:paddingHorizontal="24dp"
-                android:paddingVertical="12dp"
+                android:paddingVertical="6dp"
                 android:text="@string/subtitle"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/tv_price"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/background_login"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:paddingVertical="3dp"
+                android:text="@string/price"
+                android:textColor="@color/primaryColor"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_subtitle" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>

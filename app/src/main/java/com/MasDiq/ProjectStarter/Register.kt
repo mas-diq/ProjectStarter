@@ -9,6 +9,10 @@ class Register : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+        val window = this.window
+        window.statusBarColor = this.resources.getColor(R.color.primaryColor)
+
         btnRegister.setOnClickListener {
             val move = Intent(this, LoginScreen::class.java)
             startActivity(move)
