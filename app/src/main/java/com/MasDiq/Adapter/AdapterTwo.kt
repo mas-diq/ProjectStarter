@@ -6,14 +6,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.MasDiq.Data.DataCamera
 import com.MasDiq.ProjectStarter.R
-import kotlinx.android.synthetic.main.card_layout_one.view.*
+import kotlinx.android.synthetic.main.card_layout_two.view.*
 
-class AdapterOne(private val cameraList: ArrayList<DataCamera>) :
-    RecyclerView.Adapter<AdapterOne.ViewHolder>() {
+class AdapterTwo(private val cameraList: ArrayList<DataCamera>) :
+    RecyclerView.Adapter<AdapterTwo.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterTwo.ViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.card_layout_one, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.card_layout_two, parent, false)
         return ViewHolder(itemView)
     }
 
@@ -21,8 +21,6 @@ class AdapterOne(private val cameraList: ArrayList<DataCamera>) :
         val item = cameraList[position]
         holder.image.setImageResource(item.image)
         holder.title.text = item.title
-        holder.subtitle.text = item.subtitle
-        holder.price.text = item.price
     }
 
     override fun getItemCount(): Int {
@@ -30,9 +28,7 @@ class AdapterOne(private val cameraList: ArrayList<DataCamera>) :
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val image = itemView.imageCamera!!
-        val title = itemView.tv_title!!
-        val subtitle = itemView.tv_subtitle!!
-        val price = itemView.tv_price!!
+        val image = itemView.imageCameraTwo!!
+        val title = itemView.tv_titleTwo!!
     }
 }

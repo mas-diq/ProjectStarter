@@ -21,20 +21,20 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/alpha_1" />
+            app:srcCompat="@drawable/alpha_1"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/tv_titleTwo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="12dp"
-            android:layout_marginTop="6dp"
             android:layout_weight="1"
             android:background="@drawable/background_login"
             android:fontFamily="@font/montserrat_medium"
             android:gravity="center"
             android:text="@string/title"
             android:textColor="@color/primaryColor"
-            android:textSize="18sp" />
+            android:textSize="14sp" />
     </LinearLayout>
 </RelativeLayout>
