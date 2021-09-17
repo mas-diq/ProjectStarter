@@ -10,6 +10,9 @@ class LoginScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_screen)
 
+        val window = this.window
+        window.statusBarColor = this.resources.getColor(R.color.primaryColor)
+
         btnRegister.setOnClickListener {
             val move = Intent(this, Register::class.java)
             startActivity(move)

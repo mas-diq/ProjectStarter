@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="180dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
         android:background="@drawable/background"
         android:orientation="vertical"
@@ -29,12 +29,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="6dp"
             android:layout_weight="1"
             android:background="@drawable/background_login"
             android:fontFamily="@font/montserrat_medium"
             android:gravity="center"
+            android:paddingVertical="6dp"
             android:text="@string/title"
             android:textColor="@color/primaryColor"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
     </LinearLayout>
 </RelativeLayout>

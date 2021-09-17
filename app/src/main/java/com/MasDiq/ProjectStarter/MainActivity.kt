@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val window = this.window
+        window.statusBarColor = this.resources.getColor(R.color.primaryColor)
+
         // Recycler View One
         rv.layoutManager = LinearLayoutManager(this)
         rv.setHasFixedSize(true)
