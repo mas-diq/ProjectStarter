@@ -13,6 +13,8 @@ import kotlinx.android.synthetic.main.card_layout_two.view.*
 class AdapterTwo(private val list: ArrayList<Data>) :
     RecyclerView.Adapter<AdapterTwo.ViewHolder>() {
 
+    var onClickItem: ((Data) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(R.layout.card_layout_two, parent, false)
@@ -23,7 +25,7 @@ class AdapterTwo(private val list: ArrayList<Data>) :
         val item = list[position]
         Glide.with(holder.itemView.context)
             .load(item.image)
-            .apply(RequestOptions().override(200, 120))
+            .apply(RequestOptions().override(600, 360))
             .into(holder.image)
         holder.title.text = item.title
     }
@@ -32,8 +34,14 @@ class AdapterTwo(private val list: ArrayList<Data>) :
         return list.size
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val image = itemView.imageCameraTwo!!
         val title = itemView.tv_titleTwo!!
+
+        init {
+            itemView.setOnClickListener {
+                onClickItem?.invoke(list[adapterPosition])
+            }
+        }
     }
 }

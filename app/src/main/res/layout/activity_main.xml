@@ -87,7 +87,7 @@
             android:id="@+id/tv_greeting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_medium"
+            android:fontFamily="@font/montserrat_bold"
             android:text="@string/greeting"
             android:textColor="@color/primaryTextColor"
             android:textSize="36sp"

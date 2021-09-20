@@ -13,6 +13,8 @@ import kotlinx.android.synthetic.main.card_layout_one.view.*
 class AdapterOne(private val listCamera: ArrayList<Data>) :
     RecyclerView.Adapter<AdapterOne.ViewHolder>() {
 
+    var onClickItem: ((Data) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(R.layout.card_layout_one, parent, false)
@@ -23,7 +25,7 @@ class AdapterOne(private val listCamera: ArrayList<Data>) :
         val item = listCamera[position]
         Glide.with(holder.itemView.context)
             .load(item.image)
-            .apply(RequestOptions().override(180, 120))
+            .apply(RequestOptions().override(540, 360))
             .into(holder.image)
         holder.title.text = item.title
         holder.subtitle.text = item.subtitle
@@ -34,10 +36,16 @@ class AdapterOne(private val listCamera: ArrayList<Data>) :
         return listCamera.size
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val image = itemView.imageCamera!!
         val title = itemView.tv_title!!
         val subtitle = itemView.tv_subtitle!!
         val price = itemView.tv_price!!
+
+        init {
+            itemView.setOnClickListener {
+                onClickItem?.invoke(listCamera[adapterPosition])
+            }
+        }
     }
 }

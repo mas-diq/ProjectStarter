@@ -4,6 +4,110 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primaryColor"
+    android:paddingHorizontal="24dp"
+    android:paddingTop="24dp"
     tools:context=".DetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ic_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/primaryTextColor"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/back"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ic_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ic_back"
+            app:layout_constraintTop_toTopOf="@+id/ic_back" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:id="@+id/img_photo_detail"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fx3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_title_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center"
+        android:text="@string/title"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_photo_detail" />
+
+    <TextView
+        android:id="@+id/tv_subtitle_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="@string/subtitle"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_detail" />
+
+    <TextView
+        android:id="@+id/tv_price_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_price"
+        android:fontFamily="@font/montserrat_medium"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        android:text="@string/price"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_detail" />
+
+    <TextView
+        android:id="@+id/tv_desc_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:justificationMode="inter_word"
+        android:text="@string/dec"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle_detail"
+        tools:targetApi="o" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
