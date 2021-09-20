@@ -35,7 +35,7 @@ class DetailActivity : AppCompatActivity() {
             tv_title_detail.text = data?.title
             tv_subtitle_detail.text = data?.subtitle
             tv_price_detail.text = data?.price
-//            tv_desc_detail.text = data?.
+            tv_desc_detail.text = data?.desc
         }
 
         // back to main

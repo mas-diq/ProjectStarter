@@ -8,16 +8,16 @@ import com.MasDiq.Data.Data
 import com.MasDiq.ProjectStarter.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import kotlinx.android.synthetic.main.card_layout_one.view.*
+import kotlinx.android.synthetic.main.card_layout_sony.view.*
 
-class AdapterOne(private val listCamera: ArrayList<Data>) :
-    RecyclerView.Adapter<AdapterOne.ViewHolder>() {
+class AdapterSony(private val listCamera: ArrayList<Data>) :
+    RecyclerView.Adapter<AdapterSony.ViewHolder>() {
 
     var onClickItem: ((Data) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.card_layout_one, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.card_layout_sony, parent, false)
         return ViewHolder(itemView)
     }
 

@@ -4,17 +4,19 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.MasDiq.Adapter.AdapterOne
-import com.MasDiq.Adapter.AdapterTwo
+import com.MasDiq.Adapter.AdapterCanon
+import com.MasDiq.Adapter.AdapterSony
 import com.MasDiq.Data.Data
-import com.MasDiq.Data.DataCamera
+import com.MasDiq.Data.DataCanon
+import com.MasDiq.Data.DataSony
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var list: ArrayList<Data> = arrayListOf()
-    private lateinit var adapterOne: AdapterOne
-    private lateinit var adapterTwo: AdapterTwo
+    private var listSony: ArrayList<Data> = arrayListOf()
+    private var listCanon: ArrayList<Data> = arrayListOf()
+    private lateinit var adapterSony: AdapterSony
+    private lateinit var adapterCanon: AdapterCanon
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +26,8 @@ class MainActivity : AppCompatActivity() {
         val window = this.window
         window.statusBarColor = this.resources.getColor(R.color.primaryColor)
 
-        list.addAll(DataCamera.listCamera)
+        listSony.addAll(DataSony.listCameraSony)
+        listCanon.addAll(DataCanon.listCameraCanon)
 
         // RecyclerView
         recycleOne()
@@ -33,12 +36,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun recycleOne() {
         rv.layoutManager = LinearLayoutManager(this)
-        adapterOne = AdapterOne(list)
-        rv.adapter = adapterOne
+        adapterSony = AdapterSony(listSony)
+        rv.adapter = adapterSony
         rv.setHasFixedSize(false)
 
         // Move to detail
-        adapterOne.onClickItem = {
+        adapterSony.onClickItem = {
             val move = Intent(this, DetailActivity::class.java)
             move.putExtra(DetailActivity.EXTRA, it)
             startActivity(move)
@@ -47,12 +50,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun recycleTwo() {
         rvTwo.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        adapterTwo = AdapterTwo(list)
-        rvTwo.adapter = adapterTwo
+        adapterCanon = AdapterCanon(listCanon)
+        rvTwo.adapter = adapterCanon
         rvTwo.setHasFixedSize(false)
 
         // Move to detail
-        adapterTwo.onClickItem = {
+        adapterCanon.onClickItem = {
             val move = Intent(this, DetailActivity::class.java)
             move.putExtra(DetailActivity.EXTRA, it)
             startActivity(move)
