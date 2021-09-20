@@ -5,91 +5,38 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.MasDiq.Adapter.AdapterOne
 import com.MasDiq.Adapter.AdapterTwo
+import com.MasDiq.Data.Data
 import com.MasDiq.Data.DataCamera
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var arrayList: ArrayList<DataCamera>
-    private lateinit var imageId: ArrayList<Int>
-    private lateinit var title: ArrayList<String>
-    private lateinit var subtitle: ArrayList<String>
-    private lateinit var price: ArrayList<String>
+    private var list: ArrayList<Data> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Change status bar colors
         val window = this.window
         window.statusBarColor = this.resources.getColor(R.color.primaryColor)
 
-        // Recycler View One
+        list.addAll(DataCamera.listCamera)
+        // RecyclerView
+        recycleOne()
+        recycleTwo()
+
+    }
+
+    private fun recycleOne() {
         rv.layoutManager = LinearLayoutManager(this)
-        rv.setHasFixedSize(true)
-        arrayList = arrayListOf()
+        rv.adapter = AdapterOne(list)
+        rv.setHasFixedSize(false)
+    }
 
-        // Recycler View Two
+    private fun recycleTwo() {
         rvTwo.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rvTwo.setHasFixedSize(true)
-        arrayList = arrayListOf()
-
-        imageId = arrayListOf(
-            R.drawable.alpha_1,
-            R.drawable.alpha_6100,
-            R.drawable.alpha_6400,
-            R.drawable.alpha_6600,
-            R.drawable.alpha_7c,
-            R.drawable.alpha_7r_3,
-            R.drawable.fx3
-        )
-
-        title = arrayListOf(
-            "Sony α1",
-            "Sony α6100",
-            "Sony α6400",
-            "Sony α6600",
-            "Sony α7C",
-            "Sony α7R III",
-            "Sony FX3"
-        )
-
-        subtitle = arrayListOf(
-            "Superb Resolution Camera",
-            "APS-C camera with Fast AF",
-            "E-mount with APS-C Sensor",
-            "Premium E-mount APS-C",
-            "Mini Full-frame Camera",
-            "35mm Full-frame Camera",
-            "Full-frame Cinema Line",
-        )
-
-        price = arrayListOf(
-            "Coming Soon",
-            "Rp.9,999,000",
-            "Rp.12,999,000",
-            "Rp.20,999,000",
-            "Rp.26,999,000",
-            "Rp.36,999,000",
-            "Coming Soon",
-        )
-
-        getRecyclerViewOne()
-        getRecyclerViewTwo()
-    }
-
-    private fun getRecyclerViewOne() {
-        for (x in imageId.indices) {
-            val camera = DataCamera(title[x], subtitle[x], imageId[x], price[x])
-            arrayList.add(camera)
-        }
-        rv.adapter = AdapterOne(arrayList)
-    }
-
-    private fun getRecyclerViewTwo() {
-        for (x in imageId.indices) {
-            val camera = DataCamera(title[x], subtitle[x], imageId[x], price[x])
-            arrayList.add(camera)
-        }
-        rvTwo.adapter = AdapterTwo(arrayList)
+        rvTwo.adapter = AdapterTwo(list)
+        rvTwo.setHasFixedSize(false)
     }
 }

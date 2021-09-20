@@ -4,11 +4,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.MasDiq.Data.DataCamera
+import com.MasDiq.Data.Data
 import com.MasDiq.ProjectStarter.R
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.card_layout_one.view.*
 
-class AdapterOne(private val cameraList: ArrayList<DataCamera>) :
+class AdapterOne(private val listCamera: ArrayList<Data>) :
     RecyclerView.Adapter<AdapterOne.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -18,15 +20,18 @@ class AdapterOne(private val cameraList: ArrayList<DataCamera>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = cameraList[position]
-        holder.image.setImageResource(item.image)
+        val item = listCamera[position]
+        Glide.with(holder.itemView.context)
+            .load(item.image)
+            .apply(RequestOptions().override(180, 120))
+            .into(holder.image)
         holder.title.text = item.title
         holder.subtitle.text = item.subtitle
         holder.price.text = item.price
     }
 
     override fun getItemCount(): Int {
-        return cameraList.size
+        return listCamera.size
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

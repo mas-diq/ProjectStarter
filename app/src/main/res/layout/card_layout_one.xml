@@ -21,11 +21,13 @@
 
             <ImageView
                 android:id="@+id/imageCamera"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="180dp"
+                android:layout_height="120dp"
                 android:scaleType="centerCrop"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/fx3"
                 tools:ignore="ContentDescription" />
