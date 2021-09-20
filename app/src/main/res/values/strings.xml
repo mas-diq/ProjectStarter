@@ -19,4 +19,6 @@
     <string name="recommended">Recommended</string>
     <string name="show_all">Show All</string>
     <string name="top_rated">Top Rated</string>
+    <string name="hi_user">Hi, M Shiddiq F</string>
+    <string name="greeting">What are you looking for today?</string>
 </resources>

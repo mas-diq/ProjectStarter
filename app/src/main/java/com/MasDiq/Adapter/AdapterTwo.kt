@@ -23,7 +23,7 @@ class AdapterTwo(private val list: ArrayList<Data>) :
         val item = list[position]
         Glide.with(holder.itemView.context)
             .load(item.image)
-            .apply(RequestOptions().override(200, 100))
+            .apply(RequestOptions().override(200, 120))
             .into(holder.image)
         holder.title.text = item.title
     }
