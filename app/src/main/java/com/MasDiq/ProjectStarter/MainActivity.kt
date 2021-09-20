@@ -1,95 +1,64 @@
 package com.MasDiq.ProjectStarter
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.MasDiq.Adapter.AdapterOne
-import com.MasDiq.Adapter.AdapterTwo
-import com.MasDiq.Data.DataCamera
+import com.MasDiq.Adapter.AdapterCanon
+import com.MasDiq.Adapter.AdapterSony
+import com.MasDiq.Data.Data
+import com.MasDiq.Data.DataCanon
+import com.MasDiq.Data.DataSony
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var arrayList: ArrayList<DataCamera>
-    private lateinit var imageId: ArrayList<Int>
-    private lateinit var title: ArrayList<String>
-    private lateinit var subtitle: ArrayList<String>
-    private lateinit var price: ArrayList<String>
+    private var listSony: ArrayList<Data> = arrayListOf()
+    private var listCanon: ArrayList<Data> = arrayListOf()
+    private lateinit var adapterSony: AdapterSony
+    private lateinit var adapterCanon: AdapterCanon
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Change status bar colors
         val window = this.window
         window.statusBarColor = this.resources.getColor(R.color.primaryColor)
 
-        // Recycler View One
+        listSony.addAll(DataSony.listCameraSony)
+        listCanon.addAll(DataCanon.listCameraCanon)
+
+        // RecyclerView
+        recycleOne()
+        recycleTwo()
+    }
+
+    private fun recycleOne() {
         rv.layoutManager = LinearLayoutManager(this)
-        rv.setHasFixedSize(true)
-        arrayList = arrayListOf()
+        adapterSony = AdapterSony(listSony)
+        rv.adapter = adapterSony
+        rv.setHasFixedSize(false)
 
-        // Recycler View Two
+        // Move to detail
+        adapterSony.onClickItem = {
+            val move = Intent(this, DetailActivity::class.java)
+            move.putExtra(DetailActivity.EXTRA, it)
+            startActivity(move)
+        }
+    }
+
+    private fun recycleTwo() {
         rvTwo.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rvTwo.setHasFixedSize(true)
-        arrayList = arrayListOf()
+        adapterCanon = AdapterCanon(listCanon)
+        rvTwo.adapter = adapterCanon
+        rvTwo.setHasFixedSize(false)
 
-        imageId = arrayListOf(
-            R.drawable.alpha_1,
-            R.drawable.alpha_6100,
-            R.drawable.alpha_6400,
-            R.drawable.alpha_6600,
-            R.drawable.alpha_7c,
-            R.drawable.alpha_7r_3,
-            R.drawable.fx3
-        )
-
-        title = arrayListOf(
-            "Sony α1",
-            "Sony α6100",
-            "Sony α6400",
-            "Sony α6600",
-            "Sony α7C",
-            "Sony α7R III",
-            "Sony FX3"
-        )
-
-        subtitle = arrayListOf(
-            "Superb Resolution Camera",
-            "APS-C camera with Fast AF",
-            "E-mount with APS-C Sensor",
-            "Premium E-mount APS-C",
-            "Mini Full-frame Camera",
-            "35mm Full-frame Camera",
-            "Full-frame Cinema Line",
-        )
-
-        price = arrayListOf(
-            "Coming Soon",
-            "Rp.9,999,000",
-            "Rp.12,999,000",
-            "Rp.20,999,000",
-            "Rp.26,999,000",
-            "Rp.36,999,000",
-            "Coming Soon",
-        )
-
-        getRecyclerViewOne()
-        getRecyclerViewTwo()
-    }
-
-    private fun getRecyclerViewOne() {
-        for (x in imageId.indices) {
-            val camera = DataCamera(title[x], subtitle[x], imageId[x], price[x])
-            arrayList.add(camera)
+        // Move to detail
+        adapterCanon.onClickItem = {
+            val move = Intent(this, DetailActivity::class.java)
+            move.putExtra(DetailActivity.EXTRA, it)
+            startActivity(move)
         }
-        rv.adapter = AdapterOne(arrayList)
-    }
-
-    private fun getRecyclerViewTwo() {
-        for (x in imageId.indices) {
-            val camera = DataCamera(title[x], subtitle[x], imageId[x], price[x])
-            arrayList.add(camera)
-        }
-        rvTwo.adapter = AdapterTwo(arrayList)
     }
 }

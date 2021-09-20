@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ProjectStarter</string>
-    <string name="title">Sony α7R III</string>
+    <string name="title">PowerShot G7X III</string>
     <string name="subtitle">E-mount with APS-C Sensor</string>
     <string name="price">Rp.24.9999.999,-</string>
     <string name="brand">Camera Store</string>
@@ -16,7 +16,11 @@
     <string name="tv_name">Enter your name</string>
     <string name="address">Address :</string>
     <string name="tv_address">Enter your address</string>
-    <string name="recommended">Recommended</string>
+    <string name="recommended">Canon Camera</string>
     <string name="show_all">Show All</string>
-    <string name="top_rated">Top Rated</string>
+    <string name="top_rated">Sony Camera</string>
+    <string name="hi_user">Hi, M Shiddiq F</string>
+    <string name="greeting">What are you looking for today?</string>
+    <string name="back">Back</string>
+    <string name="dec">Sony menantang batasan alat pengambil gambar konvensional dengan teknologi inovatif, menghasilkan kombinasi resolusi dan kecepatan tak tertandingi serta pengoperasian yang intuitif. α1 menawarkan dimensi baru pada performa gambar sekaligus alur kerja yang efisien, memberi pengguna kebebasan kreatif baru.</string>
 </resources>

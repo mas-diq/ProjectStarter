@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="12dp"
     android:layout_marginVertical="8dp"
     android:background="@drawable/background">
 
@@ -21,11 +20,13 @@
 
             <ImageView
                 android:id="@+id/imageCamera"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="120dp"
                 android:scaleType="centerCrop"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/fx3"
                 tools:ignore="ContentDescription" />
@@ -41,16 +42,15 @@
 
             <TextView
                 android:id="@+id/tv_title"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/montserrat_bold"
-                android:gravity="center"
                 android:text="@string/title"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_subtitle"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,7 +59,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_regular"
-                android:gravity="center_horizontal|center_vertical"
                 android:paddingHorizontal="24dp"
                 android:paddingVertical="6dp"
                 android:text="@string/subtitle"
@@ -72,18 +71,19 @@
 
             <TextView
                 android:id="@+id/tv_price"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:layout_marginBottom="12dp"
-                android:background="@drawable/background_login"
-                android:fontFamily="@font/montserrat_medium"
+                android:background="@drawable/background_price"
+                android:fontFamily="@font/montserrat_regular"
                 android:gravity="center"
-                android:paddingVertical="3dp"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
                 android:text="@string/price"
-                android:textColor="@color/primaryColor"
+                android:textColor="@color/primaryTextColor"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_subtitle" />
         </androidx.constraintlayout.widget.ConstraintLayout>
